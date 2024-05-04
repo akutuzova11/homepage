@@ -1,0 +1,24 @@
+
+.navigation__list {
+    display: block;
+    list-style: none;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    margin-top: 0;
+    background-color: #7c73e6;   
+}
+
+.navigation__item {
+    display: inline;
+    white-space: nowrap;
+padding:20px;
+color: #fff;  
+}
+
+.navigation__item:hover {
+    background-color: #fad3cf91;
+    cursor: pointer;
+}
+
