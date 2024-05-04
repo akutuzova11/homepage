@@ -9,6 +9,8 @@
         integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="form.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@500&display=swap" rel="stylesheet">
@@ -16,30 +18,35 @@
 </head>
 
 <body class="body">
-    <h1 class="header">Currency converter</h1>
-    <form name="currencyConverter" class="form js-form">
-        <label class="form__labelText">
-            Amount in PLN
-            <input type="number" name="currencyPLN" class="form__field js-amount" min="1" max="10000" step="0.01"
-                placeholder="Enter Valid Amount" value="100" required>
-        </label>
-        <label class="form__labelText">
-            Converted to
-            <select name="currency" class="form__field js-currency">
-                <option value="usd" selected>USD</option>
-                <option value="eur">EUR</option>
-                <option value="chf">CHF</option>
-                <option value="gbp">GBP</option>
-            </select>
-        </label>
-        <p>
+    <form class="form js-form">
+        <fieldset class="form__fieldset">
+            <legend class="form__legend">Currency Converter</legend>
+            <p>
+                <label>
+                    <span class="form__labelText">
+                        Currency:
+                    </span>
+                    <select class="form__field js-currency" name="currency">
+                        <option selected>EUR</option>
+                        <option>USD</option>
+                        <option>CHF</option>
+                        <option>GBP</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <span class="form__labelText">
+                        Amount:
+                    </span>
+                    <input class="form__field js-amount" name="amount" type="number" min="1" step="any" required>
+                </label>
+            </p>
+            <p>
+                <span class="form__labelText"> Result:</span><span class="form__result js-result"> N/A </span></p>
             <button class="button">Calculate</button>
-        </p>
-        <p class="form__success">Result: <span class="form__outcome js-outcome">24.82 $ </span> </p>
+        </fieldset>
     </form>
-    <p class="date">
-        Feb 08, 2024 08:00 CET
-    </p>
 </body>
 
 </html>
