@@ -1,24 +1,54 @@
-const formElement = document.querySelector(".js-form");
-const amountElement = document.querySelector(".js-amount");
-const currencyElement = document.querySelector(".js-currency");
-const outcomeElement = document.querySelector(".js-outcome");
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
 
-    const amount = amountElement.value;
-    const usd = amount * 0.2482;
-    const eur = amount * 0.2302;
-    const chf = amount * 0.2167;
-    const gbp = amount * 0.1965;
+{
+    const conversionResult = (currency, amount) => {
 
-    switch (currencyElement.value) {
-        case "usd": outcomeElement.innerText = `${usd.toFixed(2)} $`;
-            break;
-        case "eur": outcomeElement.innerText = `${eur.toFixed(2)} €`;
-            break;
-        case "chf": outcomeElement.innerText = `${chf.toFixed(2)} ₣`;
-            break;
-        case "gbp": outcomeElement.innerText = `${gbp.toFixed(2)} £`;
-            break;
-    }
-});
+        const EUR = 4.34;
+        const USD = 4.03;
+        const CHF = 4.57;
+        const GBP = 4.93;
+
+        switch (currency) {
+            case "EUR":
+                return amount / EUR;
+
+            case "USD":
+                return amount / USD;
+
+            case "CHF":
+                return amount / CHF;
+
+                case "GBP":
+                    return amount / GBP;
+                    
+        };
+    };
+
+    const updateResultText = (result, currency) => {
+
+        const resultElement = document.querySelector(".js-result");
+        resultElement.innerText = `${result.toFixed(2)} ${currency}`;
+
+    };
+
+    const onFormSubmit = (event) => {
+        event.preventDefault()
+
+        const currencyElement = document.querySelector(".js-currency");
+        const amountElement = document.querySelector(".js-amount");
+
+        const currency = currencyElement.value;
+        const amount = amountElement.value;
+
+        const result = conversionResult(currency, amount);
+
+        updateResultText(result, currency);
+    };
+
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+        formElement.addEventListener("submit", onFormSubmit);
+    };
+
+    init();
+
+};
