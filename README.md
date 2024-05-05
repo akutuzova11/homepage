@@ -14,7 +14,7 @@ Here, I invite you to join me on a journey filled with captivating stories. Let'
 
 ## Demo
 
-https://akutuzova11.github.io/Currency-converter/
+https://akutuzova11.github.io/homepage/
 
 ## Contributing
 
