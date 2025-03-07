@@ -19,7 +19,7 @@ Let's travel the world, one story at a time!
 
 ## Demo
 
-https://akutuzova11.github.io/my-travels/
+https://akutuzova11.github.io/js-my-travels/
 
 ## Contributing
 
